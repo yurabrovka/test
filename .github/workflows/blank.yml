@@ -22,4 +22,5 @@ jobs:
       working-directory: test
       run: |
         pwd
+        ls -la
         echo $ECR_REPO_NAME

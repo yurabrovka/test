@@ -2,6 +2,9 @@ name: PHP Composer
 
 on: workflow_dispatch
 
+env: 
+  ECR_REPO_NAME: ${{ secrets.ECR_REPO_NAME }}
+
 jobs:
   build:
 
@@ -18,3 +21,6 @@ jobs:
 
     # - name: Run test suite
     #   run: composer run-script test
+    - name: test
+      run: |
+        echo $ECR_REPO_NAME

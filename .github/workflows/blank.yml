@@ -21,4 +21,5 @@ jobs:
     - name: test
       working-directory: test
       run: |
+        pwd
         echo $ECR_REPO_NAME

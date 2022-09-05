@@ -19,5 +19,6 @@ jobs:
     # - name: Run test suite
     #   run: composer run-script test
     - name: test
+      working-directory: test
       run: |
         echo $ECR_REPO_NAME

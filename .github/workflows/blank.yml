@@ -20,14 +20,14 @@ jobs:
     #   run: composer run-script test
     - name: test
       id: test
+      continue-on-error: true
       working-directory: test
       run: |
-        pwd
-        ls -la
-        echo $ECR_REPO_NAME
+        exit 1
         
     - name: test2
       id: test2
+      continue-on-error: true
       working-directory: test
       run: |
         pwd

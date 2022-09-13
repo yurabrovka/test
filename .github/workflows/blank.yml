@@ -19,7 +19,24 @@ jobs:
     # - name: Run test suite
     #   run: composer run-script test
     - name: test
+      id: test
       working-directory: test
+      run: |
+        pwd
+        ls -la
+        echo $ECR_REPO_NAME
+        
+    - name: test2
+      id: test2
+      working-directory: test
+      run: |
+        pwd
+        ls -la
+        echo $ECR_REPO_NAME
+        
+    - name: test
+      working-directory: test
+      if: ${{steps.test.outcome == 'success' | steps.test2.outcome == 'success'}}
       run: |
         pwd
         ls -la
